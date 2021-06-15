@@ -1,0 +1,133 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+}
+
+main {
+    position: relative;
+}
+
+.title {
+    position: absolute;
+    top: 35%;
+    left: 35%;
+    display: flex;
+    width: 30%;
+    height: 30%;
+    color: #fff;
+    background-color: #333;
+    justify-items: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.title h1 {
+    width: 100%;
+    text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+    .title {
+        top: 45%;
+        left: 0;
+        width: 100%;
+        height: 10%;
+    }
+}
+
+.title-menu-wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#area01 {
+    background: linear-gradient(to left, rgba(39, 39, 39, 0.7), rgba(39, 39, 39, 0.7)), url(../img/menu-profile_BG.png);
+}
+#area02 {
+    background: linear-gradient(to left, rgba(39, 39, 39, 0.7), rgba(39, 39, 39, 0.7)), url(../img/menu-works_BG.png);
+}
+#area03 {
+    background: linear-gradient(to left, rgba(39, 39, 39, 0.7), rgba(39, 39, 39, 0.7)), url(../img/menu-contact_BG.png);
+}
+#area04 {
+    background: linear-gradient(to left, rgba(39, 39, 39, 0.7), rgba(39, 39, 39, 0.7)), url(../img/menu-others_BG.png);
+}
+
+#area01,#area02,#area03,#area04 {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+.contents-box {
+    display: flex;
+    width: 50%;
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.contents-box:nth-child(n+2):nth-child(-n+3) {
+    background-color: #eee;
+}
+
+.contents-box a {
+    position: relative;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    z-index: 9999;
+}
+
+.area-hover {
+    position: relative;
+    opacity: 0.7;
+    overflow: hidden;
+}
+#area01.area-hover {
+    background: linear-gradient(to left, rgba(39, 39, 39, 0.2), rgba(39, 39, 39, 0.2)), url(../img/menu-profile_BG.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+#area02.area-hover {
+    background: linear-gradient(to left, rgba(39, 39, 39, 0.2), rgba(39, 39, 39, 0.2)), url(../img/menu-works_BG.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+#area03.area-hover {
+    background: linear-gradient(to left, rgba(39, 39, 39, 0.2), rgba(39, 39, 39, 0.2)), url(../img/menu-contact_BG.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+#area04.area-hover {
+    background: linear-gradient(to left, rgba(39, 39, 39, 0.2), rgba(39, 39, 39, 0.2)), url(../img/menu-others_BG.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+.area-hover::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #060538;
+    opacity: 0.7;
+}
+.area-hover.on::before {
+    transform: translateY(100%);
+    transition: 0.5s;
+}
